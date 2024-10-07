@@ -5,3 +5,37 @@
 [x-cloak] {
     display: none;
 }
+
+@layer components {
+    .link_select {
+        @apply bg-blue-900 text-white;
+    }
+
+    .link {
+        @apply w-full cursor-pointer overflow-hidden;
+    }
+
+    .list_item {
+        @apply flex items-center overflow-hidden rounded-md h-[40px] w-[220px] font-semibold text-black dark:text-slate-100 dark:hover:bg-gray-600 hover:bg-gray-300;
+    }
+
+    .list_span {
+        @apply text-sm  w-[160px] overflow-hidden break-words text-black dark:text-white font-semibold;
+    }
+
+    .list_span-aside {
+        @apply text-sm  w-[160px] overflow-hidden text-clip break-words;
+    }
+
+    .list_image {
+        @apply min-w-[50px] h-8;
+    }
+
+    .aside_section {
+        @apply h-[50px] w-[220px] flex items-center border-b border-cyan-50 pb-3 pt-3 overflow-hidden;
+    }
+
+    .aside_section-title {
+        @apply w-[220px] flex items-center border-b border-cyan-50 pb-4 pt-5 overflow-hidden z-50 sticky top-0 left-0;
+    }
+}

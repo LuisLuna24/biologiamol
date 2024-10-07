@@ -28,11 +28,13 @@ class DatabaseSeeder extends Seeder
 
         $user = new User();
         $user->name = "Luis Eduardo";
-        $user->email = "lued1006@gmail.com";
-        $user->password = "Hmcnjsa1*";
+        $user->email = "lued1009@gmail.com";
+        $user->password = bcrypt("Hmcnjsa1*.");
         $user->estatus = "1";
         $user->nivel_usuario = 1;
         $user->email_verified_at = '05/08/2024';
         $user->save();
+
+        $this->call(RutasSeeder::class);
     }
 }
