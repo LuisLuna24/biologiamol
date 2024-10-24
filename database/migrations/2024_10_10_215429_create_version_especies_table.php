@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('version_especies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_especie');
+            $table->foreign('id_especie')->references('id')->on('especies');
+            $table->string('nombre',50);
+            $table->string('nombre_anterior',50);
+            $table->string('razon_cambio',250);
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('version_metodos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_metodo');
+            $table->foreign('id_metodo')->references('id')->on('metodos');
+            $table->string('nombre',50);
+            $table->string('nombre_anterior',50);
+            $table->string('razon_cambio',250);
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }

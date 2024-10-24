@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pcreal_reactivos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_pcreal');
+            $table->foreign('id_pcreal')->references('id')->on('pcreals');
+            $table->unsignedBigInteger('id_bit_reactivo');
+            $table->foreign('id_bit_reactivo')->references('id')->on('bit_reactivos');
             $table->timestamps();
         });
     }

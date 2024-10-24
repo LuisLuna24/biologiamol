@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('bit_reactivos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->string('no_registro',50)->unique();
+            $table->unsignedBigInteger('id_reactivo');
+            $table->foreign('id_reactivo')->references('id')->on('reactivos');
+            $table->date('apertura');
+            $table->integer('version');
+            $table->integer('estatus');
             $table->timestamps();
         });
     }

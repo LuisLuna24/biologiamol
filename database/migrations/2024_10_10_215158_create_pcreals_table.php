@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('pcreals', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->string('no_registro',50)->unique();
+            $table->unsignedBigInteger('id_analisis');
+            $table->foreign('id_analisis')->references('id')->on('analises');
+            $table->date('fecha');
+            $table->integer('sanitizo');
+            $table->integer('tiempouv');
+            $table->string('observaciones',250);
+            $table->integer('version');
+            $table->integer('estatus');
             $table->timestamps();
         });
     }

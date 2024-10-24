@@ -16,7 +16,7 @@
     </div>
     <x-table>
         <x-slot name="titles">
-            <x-th>ID</x-th>
+            <x-th>No.</x-th>
             <x-th>Nombre</x-th>
             <x-th>Versiones</x-th>
             <x-th>Editar</x-th>
@@ -24,9 +24,9 @@
         </x-slot>
         <x-slot name="rows">
             @if ($count != 0)
-                @foreach ($datos as $dato)
+                @foreach ($datos as $index=> $dato)
                     <x-tr>
-                        <x-td wire:key="{{ $dato->id }}">{{ $dato->id }}</x-td>
+                        <x-td wire:key="ana-{{ $dato->id }}">{{ $index+1 }}</x-td>
                         <x-td>{{ $dato->nombre }}</x-td>
                         <x-td>{{ $dato->version }}</x-td>
                         <x-td>

@@ -9,7 +9,7 @@ class analisis extends Model
 {
     protected $table = 'analises';
     protected $fillable = [
-        'nombre', 'estatus'
+        'nombre', 'estatus','version'
     ];
     use HasFactory;
 }

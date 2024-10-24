@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('version_equipos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_equipo');
+            $table->foreign('id_equipo')->references('id')->on('equipos');
+            $table->integer('no_inventario');
+            $table->integer('no_inventario_anterior');
+            $table->string('nombre',50);
+            $table->string('nombre_anterior',50);
+            $table->string('descripcion',250);
+            $table->string('descripcion_anterior',250);
+            $table->string('razon_cambio',250);
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }
