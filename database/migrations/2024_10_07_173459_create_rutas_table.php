@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('route',250);
             $table->integer('tipo');
             $table->integer('usuario');
-            $table->integer('estado');
+            $table->integer('estado')->default(1);
             $table->timestamps();
         });
     }

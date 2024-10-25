@@ -11,5 +11,11 @@ class analisis extends Model
     protected $fillable = [
         'nombre', 'estatus','version'
     ];
+
+    //version analisis
+    public function versionanalisis(){
+        return $this->hasMany(version_analisis::class, 'id','analisis_id');
+    }
+    
     use HasFactory;
 }

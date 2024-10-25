@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_reactivo');
             $table->foreign('id_reactivo')->references('id')->on('reactivos');
             $table->date('apertura');
-            $table->integer('version');
-            $table->integer('estatus');
+            $table->integer('version')->default(1);
+            $table->integer('estatus')->default(1);
             $table->timestamps();
         });
     }

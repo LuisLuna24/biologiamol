@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('cong_ng_ul',50);
             $table->string('dato_260_280',50);
             $table->string('dato_260_230',50);
-            $table->integer('version');
-            $table->integer('estatus');
+            $table->integer('version')->default(1);
+            $table->integer('estatus')->default(1);
             $table->timestamps();
         });
     }

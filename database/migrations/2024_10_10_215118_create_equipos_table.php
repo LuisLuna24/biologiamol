@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('no_inventario',100)->unique();
             $table->string('nombre',50);
             $table->integer('version')->default(1);
-            $table->integer('estatus');
+            $table->integer('estatus')->default(1);
             $table->timestamps();
         });
     }

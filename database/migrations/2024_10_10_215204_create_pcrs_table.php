@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('tiempo',50);
             $table->integer('sanitizo');
             $table->integer('tiempouv');
-            $table->integer('version');
-            $table->integer('estatus');
+            $table->integer('version')->default(1);
+            $table->integer('estatus')->default(1);
             $table->timestamps();
         });
     }

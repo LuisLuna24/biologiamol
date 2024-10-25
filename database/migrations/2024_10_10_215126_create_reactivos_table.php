@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->date('caducidad');
             $table->integer('version')->default(1);
-            $table->integer('estatus');
+            $table->integer('estatus')->default(1);
             $table->timestamps();
         });
     }

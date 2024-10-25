@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 50)->unique();
             $table->integer('version')->default(1);
-            $table->integer('estatus');
+            $table->integer('estatus')->default(1);
             $table->timestamps();
         });
     }
